@@ -195,7 +195,7 @@ class ChopeDB:
             cursorclass=pymysql.cursors.DictCursor)
 
         sql = ("SELECT COLLAB_BOOTHS, CIRCULAR_PODS, \
-            LEARNING_PODS, RECORDING_ROOM, LEARNING_ROOM \
+            LEARNING_PODS, RECORDING_ROOM, VIDEO_CONFERENCING_ROOM \
             FROM LIBCHOP \
             WHERE TELEGRAMID = %s")
 
@@ -336,7 +336,6 @@ def get_password(tgUsername, chatID):
     Password = obj2.decrypt(encryptedPass)
     strPassword = str(Password)
     strPassword = strPassword.strip("b'")
-    print(strPassword)
     db.close()
     return strPassword
 
